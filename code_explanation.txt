@@ -1,0 +1,64 @@
+
+
+#The code files are consisted of the following utilization.
+1. Objective function
+2. Cross-validation
+
+
+#For the implementation, the following package is needed.
+library("Rcpp")
+library("RcppArmadillo")
+library("RcppParallel")
+
+
+
+##1. Function
+The files in this folder are functions relevant to RSODC.
+
+"RSODC_implement.cpp"
+
+function to implement RSODC.
+
+"RSODC_function.cpp"
+
+objective function of RSODC.
+
+"RSODC_update_B.cpp"
+
+function to update B.
+
+"SODC_update_beta.cpp"
+
+function used in "RSODC_update_B.cpp".
+
+"RSODC_updateY_admm.cpp"
+
+function to update Y^dagger using ADMM algorithm (Boyd et al, 2011).
+
+"RSODC_update_Y.cpp"
+
+function to update Y in "RSODC_updateY_admm.cpp".
+
+"RSODC_update_V.cpp"
+
+function to update V in "RSODC_updateY_admm.cpp".
+
+"RSODC_update_L.cpp"
+
+function to update Lambda in "RSODC_updateY_admm.cpp".
+
+
+
+#2.Cross-validation
+"RSODC_function_cv.R"
+function for cross-validation.
+
+"clust_kappa.R"
+function to calculate kappa coefficients (Cohen, 1960) in "RSODC_function_cv.R"
+
+
+[Reference]
+Boyd S., Parikh N., Chu E. , Peleato B.  and Eckstein J. (2011) Distributed optimization and statistical learning via the alternating direction method of multipliers. Foundations and Trends in Machine learning, 3(1), 1-122.
+
+Cohen J. (1960) A coefficient of agreement for nominal scales. Educational and psychological measurement, 20(1), 37-46.
+
